@@ -32,3 +32,20 @@ class AlbumSerializer(serializers.ModelSerializer):
         instance.year_of_release = validated_data.get('year_of_release')
         instance.save()
         return instance
+
+
+class SongSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Song
+        fields = '__all__'
+
+    def create(self, validated_data):
+        return Song.objects.create(**validated_data)
+
+    def update(self, instance, validated_data):
+        instance.name_song = validated_data.get('name_song')
+        instance.number_in_album = validated_data.get('number_in_album')
+        instance.album = validated_data.get('album')
+        instance.save()
+        return instance
