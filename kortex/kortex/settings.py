@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'films',
+    'rest_framework_swagger',
 ]
 
 MIDDLEWARE = [
